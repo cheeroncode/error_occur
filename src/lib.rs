@@ -14,7 +14,8 @@ Defines a method to create an error when it occurs.
 pub trait ErrorOccur<T, M = &'static str> {
     type Output;
     /**
-    使用`message`创建错误。
+    使用 `message` 创建错误。  
+
     Use `message` to create the error.
     */
     fn error(self, message: M) -> Self::Output;

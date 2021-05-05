@@ -6,17 +6,21 @@ use std::{error::Error, fmt::Display};
 use super::ErrorCause;
 
 /**
-## Define a basic `error message` and an optional `error cause`.
+## 定义基本的`错误消息`和可选的`错误原因`。
+Define a basic `error message` and an optional `error cause`.
 */
 #[derive(Debug)]
 pub struct ErrorRemind {
+    /// 错误消息
     /// Error message
     message: String,
+    /// 错误原因
     /// Error cause
     cause: Option<ErrorCause>,
 }
 
 impl ErrorRemind {
+    /// ## 创建新的`ErrorRemind`
     /// Create a new `ErrorRemind`
     pub fn new(message: &str) -> ErrorRemind {
         ErrorRemind {
@@ -24,6 +28,7 @@ impl ErrorRemind {
             message: message.to_string(),
         }
     }
+    /// ## 添加错误的原始原因
     /// Add the original cause of the error
     pub fn cause(self, cause: &dyn Error) -> ErrorRemind {
         ErrorRemind {

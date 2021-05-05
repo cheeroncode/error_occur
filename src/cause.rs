@@ -4,16 +4,19 @@
 use std::{error::Error, fmt::Display};
 
 /**
-## Define the description of the original message that caused the error
+## 定义导致错误的原始消息的描述
+Define the description of the original message that caused the error
 */
 #[derive(Debug)]
 pub struct ErrorCause {
+    /// 错误的原始描述 
     /// Error original description
     description: String,
 }
 
 impl ErrorCause {
     /**
+    ## 创建新的`ErrorCause`
     Create a new `ErrorCause`
     */
     pub fn new(description: &str) -> ErrorCause {
